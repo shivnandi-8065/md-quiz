@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Quiz Demo</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#ffffff; --ink:#172033; --muted:#697386;
+    --accent:#5b5cf0; --accent2:#7c3aed; --line:#e7eaf1;
+    --good:#159957; --bad:#d64545;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#f7f8ff,#eef3ff);color:var(--ink)}
+  .app{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+  .shell{width:min(920px,100%);background:rgba(255,255,255,.86);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8);border-radius:28px;box-shadow:0 24px 70px rgba(30,40,80,.13);overflow:hidden}
+  header{padding:28px 34px 18px;border-bottom:1px solid var(--line)}
+  .brand{font-weight:800;letter-spacing:-.03em;font-size:18px}
+  .progress{height:6px;background:#edf0f7;border-radius:99px;margin-top:18px;overflow:hidden}
+  .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .35s ease}
+  main{padding:42px 48px 50px}
+  .eyebrow{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+  h1{font-size:clamp(30px,5vw,52px);line-height:1.02;letter-spacing:-.045em;margin:0 0 14px}
+  h2{font-size:30px;letter-spacing:-.035em;margin:0 0 10px}
+  p{color:var(--muted);line-height:1.65}
+  .screen{animation:enter .35s ease}
+  @keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  input{width:100%;padding:16px 18px;border:1px solid var(--line);border-radius:14px;font-size:16px;outline:none;background:#fff;transition:.2s}
+  input:focus{border-color:#8b8cf5;box-shadow:0 0 0 4px rgba(91,92,240,.1)}
+  label{display:block;font-size:14px;font-weight:700;margin:20px 0 8px}
+  .actions{display:flex;justify-content:space-between;gap:12px;margin-top:34px}
+  button{border:0;border-radius:13px;padding:14px 20px;font-weight:750;font-size:15px;cursor:pointer;transition:.2s}
+  .primary{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 9px 24px rgba(91,92,240,.25)}
+  .primary:hover{transform:translateY(-1px)}
+  .secondary{background:#f1f3f8;color:#3d4658}
+  .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  .category{position:relative;text-align:left;padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;cursor:pointer;min-height:210px;transition:.25s;overflow:hidden}
+  .category:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(40,50,100,.1);border-color:#c9caf9}
+  .icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#f0f0ff;font-size:25px;margin-bottom:20px}
+  .category h3{margin:0 0 8px;font-size:20px}
+  .category p{font-size:14px;margin:0}
+  .q-image{width:100%;height:210px;object-fit:cover;border-radius:18px;margin:18px 0;border:1px solid var(--line);background:#f1f3f8}
+  .options{display:grid;gap:12px;margin-top:22px}
+  .option{display:flex;align-items:center;gap:13px;padding:16px;border:1px solid var(--line);border-radius:15px;background:#fff;cursor:pointer;transition:.2s}
+  .option:hover{border-color:#bfc0f7;background:#fafaff}
+  .option.selected{border-color:var(--accent);background:#f5f5ff;box-shadow:0 0 0 2px rgba(91,92,240,.08)}
+  .radio{width:19px;height:19px;border:2px solid #b6bbc8;border-radius:50%;display:grid;place-items:center;flex:none}
+  .selected .radio{border-color:var(--accent)}
+  .selected .radio:after{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  .result{text-align:center;padding:25px 0}
+  .check{font-size:60px;margin-bottom:15px}
+  .small{font-size:13px;color:var(--muted)}
+  @media(max-width:700px){
+    .app{padding:12px}.shell{border-radius:20px}header{padding:22px 22px 16px}main{padding:30px 22px 36px}
+    .categories{grid-template-columns:1fr}.category{min-height:auto}.actions{margin-top:25px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+<div class="shell">
+<header>
+  <div class="brand">MD QUIZ <span style="color:#777;font-weight:500">/ interactive demo</span></div>
+  <div class="progress"><div class="bar" id="bar"></div></div>
+</header>
+<main id="main"></main>
+</div>
+</div>
+
+<script>
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwqiDLmoae0bq1ACGxI6t29PwLAbWJxwssX7Bt_aD1DFi3EAPreMkYGg5LlG3BSOH-y/exec";
+/*
+  ============================
+  CUSTOMIZATION AREA
+  ============================
+  Change the questions, answers, descriptions and image URLs here.
+*/
+const quizzes = {
+  basic: {
+    title:"Basic MD",
+    icon:"⚛️",
+    description:"Test your understanding of the foundations of molecular dynamics.",
+    questions:[
+      {q:"What is the main purpose of an MD simulation?", image:"", options:["Solve Newton's equations for atoms over time","Determine experimental crystal structures","Measure pH directly","Generate DNA sequences"]},
+      {q:"Which ensemble keeps temperature constant?", image:"", options:["NVE","NVT","NVE+vacuum","None of these"]},
+      {q:"What does a force field provide?", image:"", options:["Potential-energy functions and parameters","Experimental images","Only atomic coordinates","Only solvent molecules"]},
+      {q:"What is the typical MD timestep for an all-atom biomolecular simulation?", image:"", options:["1–2 fs","1–2 ns","1–2 μs","1–2 s"]},
+      {q:"What does RMSD commonly measure?", image:"", options:["Structural deviation from a reference","Solvent viscosity","Temperature drift","Number of atoms"]},
+    ]
+  },
+  advanced: {
+    title:"Advanced MD",
+    icon:"🧬",
+    description:"Go deeper into sampling, force fields, analysis and simulation methodology.",
+    questions:[
+      {q:"Why are periodic boundary conditions commonly used?", image:"", options:["To approximate bulk behavior","To remove all solvent","To increase temperature","To eliminate interactions"]},
+      {q:"What does PME primarily handle?", image:"", options:["Long-range electrostatics","Protein secondary structure","Trajectory compression","Temperature scaling"]},
+      {q:"What is the role of a thermostat?", image:"", options:["Control or maintain temperature","Calculate RDF directly","Build a topology","Remove periodicity"]},
+      {q:"What can an RDF, g(r), describe?", image:"", options:["Spatial distribution of particles around a reference","Protein sequence identity","Simulation wall time","GPU memory usage"]},
+      {q:"Why are equilibration and production runs separated?", image:"", options:["To allow the system to relax before collecting production data","To change the force field automatically","To remove all water","To increase atom count"]},
+    ]
+  },
+  enhanced: {
+    title:"Enhanced Sampling",
+    icon:"🌀",
+    description:"Challenge yourself with methods designed to explore difficult free-energy landscapes.",
+    questions:[
+      {q:"What is the main motivation for enhanced sampling?", image:"", options:["Improve exploration of rare or slow events","Reduce the number of atoms","Remove all thermal motion","Avoid defining a force field"]},
+      {q:"What does umbrella sampling typically use?", image:"", options:["A biasing potential across overlapping windows","Only a vacuum simulation","A single minimization","Random atom deletion"]},
+      {q:"What is WHAM used for?", image:"", options:["Combining biased histograms to estimate an unbiased distribution","Generating protein sequences","Assigning atom names","Visualizing molecules only"]},
+      {q:"What does a PMF represent?", image:"", options:["Free energy as a function of a coordinate","Total number of water molecules","Protein mass","Simulation temperature only"]},
+      {q:"What is a collective variable (CV)?", image:"", options:["A reduced coordinate describing a process of interest","A force-field atom type","A GPU setting","A trajectory file format"]},
+    ]
+  }
+};
+
+let state={screen:"intro",name:"",email:"",type:null,index:0,answers:[]};
+
+function render(){
+  const main=document.getElementById("main");
+  const bar=document.getElementById("bar");
+  let pct=0;
+  if(state.screen==="intro") pct=0;
+  if(state.screen==="choose") pct=20;
+  if(state.screen==="quiz") pct=20+(state.index/5)*80;
+  if(state.screen==="done") pct=100;
+  bar.style.width=pct+"%";
+
+  if(state.screen==="intro"){
+    main.innerHTML=`<section class="screen">
+      <div class="eyebrow">Molecular Dynamics Challenge</div>
+      <h1>How well do you know<br>molecular dynamics?</h1>
+      <p>Enter your details, choose a quiz, and answer five questions. This is a fully customizable website-style form demo.</p>
+      <label>Your name *</label><input id="name" placeholder="e.g. Shiv" value="${state.name}">
+      <label>Email <span class="small">(optional)</span></label><input id="email" type="email" placeholder="you@example.com" value="${state.email}">
+      <div class="actions"><span></span><button class="primary" onclick="start()">Continue →</button></div>
+    </section>`;
+  }
+
+  if(state.screen==="choose"){
+    main.innerHTML=`<section class="screen">
+      <div class="eyebrow">Choose your challenge</div>
+      <h2>Pick a topic</h2>
+      <p>Each category contains five questions. You can change all of these later.</p>
+      <div class="categories">
+        ${Object.entries(quizzes).map(([key,x])=>`
+          <button class="category" onclick="choose('${key}')">
+            <div class="icon">${x.icon}</div><h3>${x.title}</h3><p>${x.description}</p>
+          </button>`).join("")}
+      </div>
+    </section>`;
+  }
+
+  if(state.screen==="quiz"){
+    const quiz=quizzes[state.type], q=quiz.questions[state.index], selected=state.answers[state.index];
+    main.innerHTML=`<section class="screen">
+      <div class="eyebrow">${quiz.title} · Question ${state.index+1} of 5</div>
+      <h2>${q.q}</h2>
+      ${q.image?`<img class="q-image" src="${q.image}" alt="Question image">`:""}
+      <div class="options">
+        ${q.options.map((o,i)=>`<div class="option ${selected===i?"selected":""}" onclick="answer(${i})">
+          <span class="radio"></span><span>${o}</span>
+        </div>`).join("")}
+      </div>
+      <div class="actions">
+        <button class="secondary" onclick="back()">← Back</button>
+        <button class="primary" onclick="next()">${state.index===4?"Finish":"Next →"}</button>
+      </div>
+    </section>`;
+  }
+
+  if(state.screen==="done"){
+    const quiz=quizzes[state.type];
+    const score=state.answers.filter((a,i)=>a===0).length; // demo scoring: first option is correct
+    main.innerHTML=`<section class="screen result">
+      <div class="check">✓</div>
+      <div class="eyebrow">Quiz complete</div>
+      <h1>Nice work, ${escapeHtml(state.name)}.</h1>
+      <p>You completed the <strong>${quiz.title}</strong> quiz.</p>
+      <h2>${score} / 5</h2>
+      <p class="small">This demo currently treats the first option as the correct answer. We can replace this with your real answer key and Google Sheets submission.</p>
+      <div class="actions"><span></span><button class="primary" onclick="reset()">Take another quiz →</button></div>
+    </section>`;
+  }
+}
+
+function start(){
+  state.name=document.getElementById("name").value.trim();
+  state.email=document.getElementById("email").value.trim();
+
+  if(!state.name){
+    alert("Please enter your name.");
+    return;
+  }
+
+  state.screen="choose";
+  render();
+}
+
+
+function choose(type){
+  state.type=type;
+  state.index=0;
+  state.answers=[];
+  state.screen="quiz";
+  render();
+}
+
+
+function answer(i){
+  state.answers[state.index]=i;
+  render();
+}
+
+
+/* ============================
+   SEND RESULTS TO GOOGLE SHEETS
+   ============================ */
+
+async function submitResults(){
+
+  const quiz = quizzes[state.type];
+
+  const payload = {
+    name: state.name,
+    email: state.email,
+    quiz: quiz.title,
+    answers: state.answers,
+    score: state.answers.filter((a,i) => a === 0).length
+  };
+
+  try{
+
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    // Show completion screen
+    state.screen="done";
+    render();
+
+  }catch(error){
+
+    console.error(error);
+
+    alert(
+      "There was a problem submitting your response. Please try again."
+    );
+  }
+}
+
+
+/* ============================
+   NEXT QUESTION
+   ============================ */
+
+function next(){
+
+  if(state.answers[state.index]===undefined){
+    alert("Please select an answer.");
+    return;
+  }
+
+  if(state.index<4){
+
+    // Go to next question
+    state.index++;
+    render();
+
+  }else{
+
+    // Question 5 finished
+    // Send results to Google Sheets
+    submitResults();
+
+  }
+}
+
+
+/* ============================
+   GO BACK
+   ============================ */
+
+function back(){
+
+  if(state.index>0){
+    state.index--;
+    render();
+  }else{
+    state.screen="choose";
+    render();
+  }
+
+}
+
+
+/* ============================
+   RESET QUIZ
+   ============================ */
+
+function reset(){
+
+  state={
+    screen:"intro",
+    name:state.name,
+    email:state.email,
+    type:null,
+    index:0,
+    answers:[]
+  };
+
+  render();
+
+}
+
+
+/* ============================
+   SECURITY
+   ============================ */
+
+function escapeHtml(s){
+  return s.replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+}
+
+
+render();
+</script>
+</body>
+</html>
