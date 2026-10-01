@@ -1,223 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']]
-  }
-};
-</script>
-
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<head>
-
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>MD Quiz</title>
-
-
-<!-- Google Sign-In -->
-<script
-  src="https://accounts.google.com/gsi/client"
-  async
-  defer
-></script>
-
-
-<style>
-
-:root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --ink: #172033;
-  --muted: #697386;
-  --accent: #5b5cf0;
-  --accent2: #7c3aed;
-  --line: #e7eaf1;
-  --bad: #d64545;
-}
-
-
-* {
-  box-sizing: border-box;
-}
-
-
-body {
-  margin: 0;
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f7f8ff,
-      #eef3ff
-    );
-
-  color: var(--ink);
-}
-
-
-.app {
-  min-height: 100vh;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 28px;
-}
-
-
-.shell {
-  width: min(920px, 100%);
-
-  background: rgba(255,255,255,.95);
-
-  backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255,255,255,.8);
-
-  border-radius: 28px;
-
-  box-shadow:
-    0 24px 70px rgba(30,40,80,.13);
-
-  overflow: hidden;
-}
-
-
-header {
-  padding: 28px 34px 18px;
-
-  border-bottom:
-    1px solid var(--line);
-}
-
-
-.brand {
-  font-weight: 800;
-
-  letter-spacing: -.03em;
-
-  font-size: 18px;
-}
-
-
-.progress {
-  height: 6px;
-
-  background: #edf0f7;
-
-  border-radius: 99px;
-
-  margin-top: 18px;
-
-  overflow: hidden;
-}
-
-
-.bar {
-  height: 100%;
-
-  width: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--accent),
-      var(--accent2)
-    );
-
-  transition: width .35s ease;
-}
-
-
-main {
-  padding: 42px 48px 50px;
-}
-
-
-.screen {
-  animation: enter .35s ease;
-}
-
-
-@keyframes enter {
-
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-
-}
-
-
-.eyebrow {
-  font-size: 13px;
-
-  font-weight: 700;
-
-  color: var(--accent);
-
-  text-transform: uppercase;
-
-  letter-spacing: .12em;
-
-  margin-bottom: 10px;
-}
-
-
-h1 {
-  font-size:
-    clamp(30px, 5vw, 52px);
-
-  line-height: 1.02;
-
-  letter-spacing: -.045em;
-
-  margin: 0 0 14px;
-}
-
-
-h2 {
-  font-size: 30px;
-
-  letter-spacing: -.035em;
-
-  margin: 0 0 10px;
-}
-
-
-p {
-  color: var(--muted);
-
-  line-height: 1.65;
-}
-
-
-label {
-  display: block;
+Last login: Wed Sep 30 12:20:23 on ttys000
+cd D%                                                                                                                                                  (base) shivnandi@Unknown_8e:52:95:74:6b:c9 ~ % cd Documents
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 Documents % l
+724px-Jawaharlal_Nehru_University_Logo_vectorized.svg.png	logo_DNLAB.pdf
+Adobe/								logo_DNLAB.png
+AI-ML-DMSE/							MATLAB/
+annurev.neuro.26.010302.081142 copy.pdf				ML_ideas/
+batman_wallpaper/						my folder/
+books/								OneDrive - IIT Delhi@
+Codex/								pmrf_webpage/
+Comprihensive/							shivnandi/
+course_work/							shivnandiPD/
+csml_logo_transparent.png					software/
+DMSE_Logo.png							stupid_ideas/
+FMML/								table2.png
+IITB conference/						test/
+IITD_LOGO.png							workstation_details/
+iitgn/								worshop_application/
+lab/
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 Documents % cd lab
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 lab % l
+~$grp_ppt_20_jan.pptx					MAC-xmgrace-VMD-.pptx
+A100_crash_report.docx					mam_japan_ideas/
+A100_crash_report.pdf					mamw/
+abhishek/						MLforScience2025/
+ACS Membership Offer.pdf				mll212/
+aiml/							mll212_jan_2025/
+akansha/						mll760/
+All_lit_review_year_wise.pptx				movie.mp4
+ALL_PAPERS.xlsx						movie.pptx
+alpha-syn/						my_paper/
+animation.mp4						OneDrive_1_15-9-2025_2_slids_pyoga_alpha/
+archana/						p1/
+benchmark_mac_mini_m2.pdf				p1.2/
+Benchmark_with_hpc.pdf					p3/
+bills_merged.pdf					p3.2_beta/
+blender-movie.mkv					papers/
+BTP/							parth/
+CECAM/							Pictures/
+cert/							PMRF/
+CHapter_aafter_compri/					pmrf_cite/
+chapters/						poster/
+charusita/						PR2022.pdf
+Charusita_symposium_2026/				progress report/
+compflu/						project_ML/
+conference_poster/					python/
+conferences/						rama/
+conferences_poster/					RARE2025/
+Conferences.xlsx					rdf-O-H-inter.xvg*
+crowding/						references.xlsx
+dali/							review_article/
+department_cluster_benchmark2.pdf			review_ssd/
+dhiliban/						rtx5090vsrtx6000.docx
+DN/							rtx5090vsrtx6000.pdf
+docking.pptx						satyendra/
+DRAVYAKRIT/						schlor_miss_attendence-form.pdf
+Dravyakrit25/						sfn201112009.pdf
+eg_and_deg_test/					shivnandi/
+final-movie.mp4						SHIVNANDI_IRD_reciept.pdf
+FMML/							siba/
+forms/							siba progress report july-dec 2022_page-0001.pdf
+gangotre/						Softwarelist_DMSE.pdf
+general_read/						Softwarelist_tyron.pdf
+grp_ppt_21_n0v_2025.pptx				Softwarelist.docx
+hard_disks.pdf						stationery_may2025.pdf
+Hitesh/							STRIDE.pdf
+HPC_proposal/						summary/
+hpc-projects.png					tcs/
+ICTP/							tejasi/
+ideas/							Tentative_Thesis_Plan.docx
+IITD_MS_Charusita_HPC_IP_Details.xlsx			Tentative_Thesis_Plan.pdf
+ipshita/						test/
+jnu conf/						thesis/
+KBI/							ucon/
+lab_poster/						untitled folder/
+Leave Form for Ph.D. Students.doc			untitled folder 2/
+List of stationery.docx					untitled folder 3/
+List of stationery.pdf					US/
+List of things_1.pdf					vishal/
+List of things.docx					vmd-tutorial.pdf
+List of things.pdf					water_comparison_abeta42/
+list_of_next_conferences.pdf				work_plan_sept_2025.docx
+List_of_staionary-oct-2024.pdf				workstation_details.pdf
+List_of_stationery_received.pdf				yoga/
+List_of_things_recieved.pdf
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+-- INSERT --
 
   font-size: 14px;
 
@@ -257,1205 +162,8 @@ input:focus {
   display: flex;
 
   justify-content: space-between;
-
-  gap: 12px;
-
-  margin-top: 34px;
-}
-
-
-button {
-  border: 0;
-
-  border-radius: 13px;
-
-  padding: 14px 20px;
-
-  font-weight: 750;
-
-  font-size: 15px;
-
-  cursor: pointer;
-
-  transition: .2s;
-}
-
-
-button:disabled {
-  opacity: .5;
-
-  cursor: not-allowed;
-}
-
-
-.primary {
-  color: #fff;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--accent),
-      var(--accent2)
-    );
-
-  box-shadow:
-    0 9px 24px rgba(91,92,240,.25);
-}
-
-
-.primary:hover {
-  transform: translateY(-1px);
-}
-
-
-.secondary {
-  background: #f1f3f8;
-
-  color: #3d4658;
-}
-
-
-.categories {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 16px;
-
-  margin-top: 28px;
-}
-
-
-.category {
-  text-align: left;
-
-  padding: 24px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius: 20px;
-
-  background: #fff;
-
-  cursor: pointer;
-
-  min-height: 210px;
-
-  transition: .25s;
-}
-
-
-.category:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 14px 35px rgba(40,50,100,.1);
-
-  border-color: #c9caf9;
-}
-
-
-.icon {
-  width: 52px;
-
-  height: 52px;
-
-  border-radius: 15px;
-
-  display: grid;
-
-  place-items: center;
-
-  background: #f0f0ff;
-
-  font-size: 25px;
-
-  margin-bottom: 20px;
-}
-
-
-.category h3 {
-  margin: 0 0 8px;
-
-  font-size: 20px;
-}
-
-
-.category p {
-  font-size: 14px;
-
-  margin: 0;
-}
-
-
-.q-image {
-  width: 100%;
-
-  max-height: 300px;
-
-  object-fit: cover;
-
-  border-radius: 18px;
-
-  margin: 18px 0;
-
-  border:
-    1px solid var(--line);
-}
-
-
-.options {
-  display: grid;
-
-  gap: 12px;
-
-  margin-top: 22px;
-}
-
-
-.option {
-  display: flex;
-
-  align-items: center;
-
-  gap: 13px;
-
-  padding: 16px;
-
-  border:
-    1px solid var(--line);
-
-  border-radius: 15px;
-
-  background: #fff;
-
-  cursor: pointer;
-
-  transition: .2s;
-}
-
-
-.option:hover {
-  border-color: #bfc0f7;
-
-  background: #fafaff;
-}
-
-
-.option.selected {
-  border-color: var(--accent);
-
-  background: #f5f5ff;
-
-  box-shadow:
-    0 0 0 2px rgba(91,92,240,.08);
-}
-
-
-.radio {
-  width: 19px;
-
-  height: 19px;
-
-  border:
-    2px solid #b6bbc8;
-
-  border-radius: 50%;
-
-  display: grid;
-
-  place-items: center;
-
-  flex: none;
-}
-
-
-.selected .radio {
-  border-color: var(--accent);
-}
-
-
-.selected .radio::after {
-  content: "";
-
-  width: 9px;
-
-  height: 9px;
-
-  border-radius: 50%;
-
-  background: var(--accent);
-}
-
-
-.result {
-  text-align: center;
-
-  padding: 25px 0;
-}
-
-
-.check {
-  font-size: 60px;
-
-  margin-bottom: 15px;
-}
-
-
-.score {
-  font-size: 42px;
-
-  font-weight: 800;
-
-  margin: 15px 0;
-}
-
-
-.small {
-  font-size: 13px;
-
-  color: var(--muted);
-}
-
-
-.google-box {
-  margin-top: 25px;
-
-  padding: 20px;
-
-  background: #fafaff;
-
-  border:
-    1px solid var(--line);
-
-  border-radius: 18px;
-}
-
-
-.google-status {
-  margin-top: 12px;
-
-  font-size: 14px;
-
-  color: var(--muted);
-}
-
-
-.user-box {
-  margin-top: 15px;
-
-  padding: 12px 15px;
-
-  background: #f4f4ff;
-
-  border-radius: 12px;
-
-  font-size: 14px;
-}
-
-
-.error {
-  color: var(--bad);
-
-  font-size: 14px;
-
-  margin-top: 10px;
-}
-
-
-@media (max-width: 700px) {
-
-  .app {
-    padding: 12px;
-  }
-
-
-  .shell {
-    border-radius: 20px;
-  }
-
-
-  header {
-    padding:
-      22px 22px 16px;
-  }
-
-
-  main {
-    padding:
-      30px 22px 36px;
-  }
-
-
-  .categories {
-    grid-template-columns: 1fr;
-  }
-
-
-  .category {
-    min-height: auto;
-  }
-
-
-  .actions {
-    margin-top: 25px;
-  }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="app">
-
-  <div class="shell">
-
-    <header>
-
-      <div class="brand">
-
-        MD QUIZ
-
-        <span
-          style="
-            color:#777;
-            font-weight:500;
-          "
-        >
-          / interactive quiz
-        </span>
-
-      </div>
-
-
-      <div class="progress">
-
-        <div
-          class="bar"
-          id="bar"
-        ></div>
-
-      </div>
-
-    </header>
-
-
-    <main id="main"></main>
-
-  </div>
-
-</div>
-
-
-
-<script>
-
-
-/* =========================================================
-   GOOGLE / APPS SCRIPT SETTINGS
-   ========================================================= */
-
-
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwqiDLmoae0bq1ACGxI6t29PwLAbWJxwssX7Bt_aD1DFi3EAPreMkYGg5LlG3BSOH-y/exec";
-
-
-const GOOGLE_CLIENT_ID =
-  "137181230859-7na7p5vt38snq92hcnqsdl5kh6b944so.apps.googleusercontent.com";
-
-
-
-/* =========================================================
-   QUIZ QUESTIONS
-   ========================================================= */
-
-
-const quizzes = {
-
-
-  basic: {
-
-    title: "Basic MD",
-
-    icon: "⚛️",
-
-    description:
-      "Test your understanding of the foundations of molecular dynamics.",
-
-    questions: [
-
+-- INSERT (paste) --
       {
-        q: "Why is a timestep of 1–2 fs commonly used in atomistic MD simulations?",
-
-        image: "",
-
-        options: [
-          "To accurately resolve the fastest atomic motions",
-          "Because proteins fold in a time steps of every 1–2 fs",
-          "To keep the temperature constant",
-          "Because the simulation box changes every 1–2 fs "
-        ],
-
-        correct: 0
-      },
-
-
-      {
-        q: "How does the choice of NVT or NPT ensemble affect the calculation of free energy in molecular dynamics?",
-
-        image: "",
-
-        options: [
-          "The ensemble has no effect on free energy calculations",
-          "The appropriate free-energy definition depends on the thermodynamic ensemble and its controlled variables",
-          "NPT simulations always give lower free energies than NVT simulations",
-          "NVT simulations cannot be used for free-energy calculations "
-        ],
-
-        correct: 1
-      },
-
-
-      {
-        q: "Which fundamental equation governs the motion of atoms in classical molecular dynamics?",
-
-        image: "",
-
-        options: [
-          "Schrödinger equation",
-          "Newton's second law",
-          "Boltzmann equation",
-          "Navier–Stokes equation "
-        ],
-
-        correct: 1
-      },
-
-
-      {
-        q:
-          "Which quantity does not change as a result of the time integration of an individual particle's motion?",
-
-        image: "",
-
-        options: [
-          "Position",
-          "Velocity",
-          "Acceleration",
-          "Mass "
-        ],
-
-        correct: 3
-      },
-
-
-      {
-        q: "Why is NVT equilibration commonly performed before NPT equilibration?",
-
-        image: "",
-
-        options: [
-          "To first stabilize the system's temperature before allowing the volume/density to adjust",
-          "To increase the number of particles ",
-          "To remove all kinetic energy from the system",
-          "To eliminate the need for pressure coupling "
-        ],
-
-        correct: 0
-      }
-
-    ]
-
-  },
-
-
-
-  advanced: {
-
-    title: "Advanced MD",
-
-    icon: "🧬",
-
-    description:
-      "Go deeper into sampling, force fields, analysis and simulation methodology.",
-
-    questions: [
-
-      {
-        q: "In the <strong>Nosé extended-system formulation</strong>, the Hamiltonian is given by<br><br>\\[ H_{\\mathrm{Nos\\acute{e}}} = \\sum_{i=1}^{N}\\frac{p_i^2}{2m_i s^2} + \\frac{p_s^2}{2Q} + U(r^N) + gk_{\\mathrm{B}}T\\ln s \\]<br><br>where \\(Q\\) is the <strong>thermostat mass (inertia)</strong>.<br><br><strong>What is the effect of increasing the value of \\(Q\\) on the coupling between the thermostat and the system?</strong>",
-
-        image: "",
-
-        options: [
-          "Larger Q → stronger/faster thermostat coupling; smaller Q → weaker/slower thermostat coupling",
-          "The thermostat-system coupling is independent of Q",
-          "Larger Q → weaker/slower thermostat coupling; smaller Q → stronger/faster thermostat coupling",
-          "Larger Q directly increases the temperature of the system"
-        ],
-
-        correct: 2
-      },
-
-
-      {
-        q: "Two molecules, A and B, are identical in all respects except that m_B > m_A. What is the expected effect of the larger mass on molecule B?",
-
-        image: "",
-
-        options: [
-          "Its potential energy becomes larger.",
-          "Its acceleration and characteristic vibrational frequencies generally decrease",
-          "Its equilibrium structure does not change",
-          "Its force becomes smaller"
-        ],
-
-        correct: 1
-      },
-
-
-      {
-        q: "In the Ewald summation method, the long-range electrostatic interaction is mathematically separated into which components?",
-
-        image: "",
-
-        options: [
-          "Real-space and reciprocal-space contributions, along with a self-interaction correction",
-          "Kinetic and potential energy contributions",
-          "Bonded and nonbonded contributions",
-          "Coulombic and Lennard-Jones contributions"
-        ],
-
-        correct: 0
-      },
-
-
-      {
-        q: "When choosing a simulation box for a protein/polymer in water under periodic boundary conditions, which considerations are important?",
-
-        image: "",
-
-        options: [
-          "The solute should not interact with its own periodic image.",
-          "Local properties/correlations < box length/2",
-          "The simulation box can be equal to the cutoff of vdW forces",
-          "Both A and B"
-          "All of A, B, and C"
-        ],
-
-        correct: 3
-      },
-
-
-      {
-        q:
-          "In GROMACS, what does lincs_order = 4 represent?",
-
-        image: "",
-
-        options: [
-          "LINCS performs four iterations to correct the bond constraints",
-          "LINCS uses a fourth-order expansion to calculate the constraint correction",
-          "Four bonds are constrained in each molecule",
-          "The timestep is divided into four integration steps "
-        ],
-
-        correct: 1
-      }
-
-    ]
-
-  },
-
-
-
-  enhanced: {
-
-    title: "Enhanced Sampling",
-
-    icon: "🌀",
-
-    description:
-      "Challenge yourself with methods designed to explore difficult free-energy landscapes.",
-
-    questions: [
-
-      {
-        q:
-          "What is the main purpose of having sufficient overlap between neighboring umbrella sampling windows?",
-
-        image: "",
-
-        options: [
-          "To provide continuous sampling of the reaction coordinate and allow WHAM to reliably combine information from adjacent windows",
-          "To make the biasing potential identical in all windows",
-          "To minimize the force constant in every window",
-          "To ensure that the PMF is zero in every window "
-        ],
-
-        correct: 0
-      },
-
-
-      {
-        q:
-          "What does WHAM stand for?",
-
-        image: "",
-
-        options: [
-          "Weighted Hamiltonian Analysis Method",
-          "Windowed Histogram Analysis Method",
-          "Weighted Histogram Analysis Method",
-          "Weighted Hybrid Analysis Method "
-        ],
-
-        correct: 2
-      },
-
-
-      {
-        q: `<strong>Meaning of \\(F_i\\)</strong><br><br>
-            For an umbrella window, the free-energy profile can be written as
-            \\[
-            G_i(\\xi) = -\\frac{1}{\\beta}\\ln P_i^b(\\xi) - \\omega_i(\\xi) + F_i
-            \\]
-            <br>
-            <strong>What does \\(F_i\\) represent?</strong>`,
-      
-        image: "",
-      
-        options: [
-          "The force constant of umbrella window i",
-          "The external force acting on the system",
-          "The total free energy of the system"
-          "The free-energy offset associated with umbrella window i"
-        ],
-      
-        correct: 3
-      },
-
-      {
-        q: What is the primary purpose of the Weighted Histogram Analysis Method (WHAM) in umbrella sampling?",
-
-        image: "",
-
-        options: [
-          "Minimizes the free-energy offsets of each umbrella window",
-          "Removes the reaction coordinate from the simulation",
-          "Generates independent umbrella windows automatically",
-          "Iteratively determines the free-energy offsets and unbiased probability distribution to reconstruct the PMF"
-        ],
-
-        correct: 3
-      },
-
-
-      {
-        q: `<strong>Which function is commonly used as the biasing potential in harmonic umbrella sampling?</strong><br><br>
-            A. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)<br>
-            B. \\(\displaystyle \\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)<br>
-            C. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)<br>
-            D. \\(\displaystyle \\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)`,
-      
-        image: "",
-      
-        options: [
-          "\\(\\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)",
-          "\\(\\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)",
-          "\\(\\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)",
-          "\\(\\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)"
-        ],
-      
-        correct: 0
-      },
-
-    ]
-
-  }
-
-};
-
-
-
-/* =========================================================
-   APPLICATION STATE
-   ========================================================= */
-
-
-let state = {
-
-  screen: "intro",
-
-  name: "",
-
-  email: "",
-
-  googleCredential: "",
-
-  googleSub: "",
-
-  type: null,
-
-  index: 0,
-
-  answers: [],
-
-  finalScore: 0
-
-};
-
-
-
-/* =========================================================
-   GOOGLE SIGN-IN
-   ========================================================= */
-
-
-function handleGoogleCredential(response) {
-
-  try {
-
-    const credential =
-      response.credential;
-
-
-    state.googleCredential =
-      credential;
-
-
-    /*
-     * Decode Google ID token payload
-     * to display the user's email.
-     *
-     * The Apps Script backend performs
-     * the actual verification.
-     */
-
-
-    const payload =
-      JSON.parse(
-        atob(
-          credential
-            .split(".")[1]
-            .replace(/-/g, "+")
-            .replace(/_/g, "/")
-        )
-      );
-
-
-    state.email =
-      payload.email || "";
-
-
-    state.googleSub =
-      payload.sub || "";
-
-
-    render();
-
-
-  } catch (error) {
-
-    console.error(error);
-
-    alert(
-      "Google Sign-In could not be completed. Please try again."
-    );
-
-  }
-
-}
-
-
-
-function initializeGoogleSignIn() {
-
-  if (
-    typeof google === "undefined" ||
-    !google.accounts ||
-    !google.accounts.id
-  ) {
-
-    setTimeout(
-      initializeGoogleSignIn,
-      500
-    );
-
-    return;
-
-  }
-
-
-  google.accounts.id.initialize({
-
-    client_id:
-      GOOGLE_CLIENT_ID,
-
-    callback:
-      handleGoogleCredential,
-
-    auto_select:
-      false,
-
-    cancel_on_tap_outside:
-      true
-
-  });
-
-
-  const button =
-    document.getElementById(
-      "googleButton"
-    );
-
-
-  if (button) {
-
-    google.accounts.id.renderButton(
-
-      button,
-
-      {
-        theme: "outline",
-
-        size: "large",
-
-        width: 300,
-
-        text: "signin_with",
-
-        shape: "rectangular"
-      }
-
-    );
-
-  }
-
-}
-
-
-
-/* =========================================================
-   RENDER
-   ========================================================= */
-
-
-function render() {
-
-  if (
-    state.screen === "intro"
-  ) {
-
-    renderIntro();
-
-  }
-
-  else if (
-    state.screen === "category"
-  ) {
-
-    renderCategory();
-
-  }
-
-  else if (
-    state.screen === "quiz"
-  ) {
-
-    renderQuiz();
-
-  }
-
-  else if (
-    state.screen === "done"
-  ) {
-
-    renderDone();
-
-  }
-
-}
-
-
-
-/* =========================================================
-   INTRO
-   ========================================================= */
-
-
-function renderIntro() {
-
-  document
-    .getElementById("bar")
-    .style.width = "0%";
-
-
-  document
-    .getElementById("main")
-    .innerHTML = `
-
-      <div class="screen">
-
-        <div class="eyebrow">
-          MOLECULAR DYNAMICS CHALLENGE
-        </div>
-
-
-        <h1>
-          How well do you know
-          molecular dynamics?
-        </h1>
-
-
-        <p>
-          Enter your name and sign in with Google
-          before starting the quiz.
-        </p>
-
-
-        <label>
-          Your name *
-        </label>
-
-
-        <input
-          id="nameInput"
-          type="text"
-          placeholder="e.g. Shiv"
-          value="${escapeHtml(state.name)}"
-        >
-
-
-        <div class="google-box">
-
-          <strong>
-            Sign in with Google
-          </strong>
-
-
-          <p class="small">
-
-            Your Google account is used to record
-            your verified email address with your
-            quiz response.
-
-          </p>
-
-
-          <div id="googleButton"></div>
-
-
-          ${
-            state.email
-
-            ?
-
-            `
-              <div class="user-box">
-
-                ✓ Signed in as
-
-                <strong>
-                  ${escapeHtml(state.email)}
-                </strong>
-
-              </div>
-            `
-
-            :
-
-            `
-              <div class="google-status">
-                Please sign in with Google to continue.
-              </div>
-            `
-          }
-
-        </div>
-
-
-        <div id="introError"></div>
-
-
-        <div class="actions">
-
-          <div></div>
-
-
-          <button
-            class="primary"
-            onclick="startQuiz()"
-          >
-            Continue →
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-
-  initializeGoogleSignIn();
-
-}
-
-
-
-/* =========================================================
-   START QUIZ
-   ========================================================= */
-
-
-function startQuiz() {
-
-  const name =
-    document
-      .getElementById("nameInput")
-      .value
-      .trim();
-
-
-  const error =
-    document.getElementById(
-      "introError"
-    );
-
-
-  if (!name) {
-
-    error.innerHTML = `
-      <div class="error">
-        Please enter your name.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  if (!state.email) {
-
-    error.innerHTML = `
-      <div class="error">
-        Please sign in with Google before continuing.
-      </div>
-    `;
-
-    return;
-
-  }
-
-
-  state.name =
-    name;
-
-
-  state.screen =
-    "category";
-
-
-  render();
-
-}
-
-
-
-/* =========================================================
-   CATEGORY
-   ========================================================= */
-
-
-function renderCategory() {
-
-  document
-    .getElementById("bar")
-    .style.width = "5%";
-
-
-  document
-    .getElementById("main")
-    .innerHTML = `
-
-      <div class="screen">
-
-        <div class="eyebrow">
-          STEP 1
-        </div>
-
-
-        <h2>
-          Choose your challenge
-        </h2>
-
-
-        <p>
-          Select one category.
-          Each category contains five questions.
-        </p>
-
-
-        <div class="categories">
-
-          ${
-
-            Object.entries(quizzes)
-
-              .map(
-                ([key, quiz]) => `
-
-                  <div
-                    class="category"
-                    onclick="chooseCategory('${key}')"
-                  >
-
-                    <div class="icon">
-                      ${quiz.icon}
-                    </div>
-
-
-                    <h3>
-                      ${quiz.title}
-                    </h3>
-
-
-                    <p>
-                      ${quiz.description}
-                    </p>
-
-                  </div>
-
-                `
-              )
-
-              .join("")
-
-          }
-
-        </div>
-
-      </div>
-
-    `;
-
-}
-
-
-
-/* =========================================================
-   CHOOSE CATEGORY
-   ========================================================= */
-
-
-function chooseCategory(type) {
 
   state.type =
     type;
@@ -1495,567 +203,119 @@ function renderQuiz() {
 
 
   const progress =
-    (
-      (state.index + 1)
-      /
-      total
-    ) * 100;
+-- INSERT (paste) --
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 lab % cd conferences/
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 conferences % l
+BPS2027/	cttc-BARC/	ICMS2026/	ISMC2026/	SMCB2025/	TCS2025/
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 conferences % cd ICMS2026
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 ICMS2026 % ls
+1789812437 - 10000.00 To INTERNATIONAL CONFERENCE ON MOLECULAR SIMULAT on Google Pay.png
+Abstract-Template.docx
+DRC-application-ICMS2026.pdf
+DRC-application.docx
+DRC-application.pdf
+focus_people.docx
+ICMS_Poster_final.pdf
+ICMS_Poster.pptx
+IMG_9C25ED1A9577-1.jpeg
+MR SHIVNANDI SHIVNANDI-O.pdf
+MR SHIVNANDI SHIVNANDI-R.pdf
+quiz
+Shivnandi-ICML_2026_1.pdf
++ +--593 lines: <!DOCTYPE html>--------------------------------------------|+ +--593 lines: <!DOCTYPE html>--------------------------------------------
+      margin-top: 25px;                                                    |      margin-top: 25px;
+    }                                                                      |    }
+                                                                           |
+  }                                                                        |  }
+                                                                           |
+  </style>                                                                 |  </style>
+  -------------------------------------------------------------------------|
+  -------------------------------------------------------------------------|
+  -------------------------------------------------------------------------|    <script>
+  -------------------------------------------------------------------------|      window.MathJax = {
+  -------------------------------------------------------------------------|        tex: {
+  -------------------------------------------------------------------------|          inlineMath: [['\\(', '\\)']],
+  -------------------------------------------------------------------------|          displayMath: [['\\[', '\\]']]
+  -------------------------------------------------------------------------|        },
+  -------------------------------------------------------------------------|        options: {
+  -------------------------------------------------------------------------|          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre',
+  -------------------------------------------------------------------------|        }
+  -------------------------------------------------------------------------|      };
+  -------------------------------------------------------------------------|    </script>
+  -------------------------------------------------------------------------|    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-c
+                                                                           |
+  </head>                                                                  |  </head>
+                                                                           |
+                                                                           |
+  <body>                                                                   |  <body>
+                                                                           |
++ +--259 lines: <div class="app">------------------------------------------|+ +--259 lines: <div class="app">------------------------------------------
+    },                                                                     |    },
+                                                                           |
+                                                                           |
+                                                                           |
+    enhanced: {                                                            |    enhanced: {
+                                                                           |
+      title: "Enhanced Sampling",                                          |      title: "Umbrella Sampling",
+                                                                           |
+      icon: "🌀",                                                          |      icon: "🌀",
+                                                                           |
+website.html                                                                MD_Quiz_updated111.html
+"MD_Quiz_updated111.html" [noeol] 2043L, 27062B
+Shivnandi-ICML_2026_final.pdf
+Shivnandi-ICML_2026.pdf
+Shivnandi-ICMS_2026.docx
+Shivnandi-ICMS_2026.pdf
+ShivnandiICMS-2026-Receipt.pdf
+test.pptx
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 ICMS2026 % cd quiz
+(base) shivnandi@Unknown_8e:52:95:74:6b:c9 quiz % l
+~$ques.docx
+client_secret_137181230859-7na7p5vt38snq92hcnqsdl5kh6b944so.apps.googleusercontent.com.json
+Code_google_signin.gs
+index_google_signin.html
+index.html
+md_quiz_demo.html
+MD_Quiz_updated111.html
+ques.docx
+ques.pdf
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>MD Quiz</title>
 
 
-  document
-    .getElementById("bar")
-    .style.width =
-      progress + "%";
+<!-- Google Sign-In -->
+<script
+  src="https://accounts.google.com/gsi/client"
+  async
+  defer
+></script>
 
 
-  const selected =
-    state.answers[state.index];
+<style>
 
-
-  document
-    .getElementById("main")
-    .innerHTML = `
-
-      <div class="screen">
-
-        <div class="eyebrow">
-          ${quiz.title}
-        </div>
-
-
-        <h2>
-          Question
-          ${state.index + 1}
-          of
-          ${total}
-        </h2>
-
-        <p>
-          ${question.q}
-        </p>
-
-
-        ${
-          question.image
-
-          ?
-
-          `
-            <img
-              class="q-image"
-              src="${escapeHtml(question.image)}"
-              alt="Question image"
-            >
-          `
-
-          :
-
-          ""
-        }
-
-
-        <div class="options">
-
-          ${
-
-            question.options
-
-              .map(
-                (option, i) => `
-
-                  <div
-                    class="
-                      option
-                      ${
-                        selected === i
-                          ? "selected"
-                          : ""
-                      }
-                    "
-                    onclick="answerQuestion(${i})"
-                  >
-
-                    <div class="radio"></div>
-
-                    <div>
-                      ${option}
-                    </div>
-
-                  </div>
-
-                `
-              )
-
-              .join("")
-
-          }
-
-        </div>
-
-
-        <div class="actions">
-
-          <button
-            class="secondary"
-            onclick="previousQuestion()"
-            ${
-              state.index === 0
-                ? "disabled"
-                : ""
-            }
-          >
-            ← Back
-          </button>
-
-
-          <button
-            class="primary"
-            onclick="nextQuestion()"
-          >
-
-            ${
-              state.index === total - 1
-                ? "Finish Quiz"
-                : "Next →"
-            }
-
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #172033;
+  --muted: #697386;
+  --accent: #5b5cf0;
+  --accent2: #7c3aed;
+  --line: #e7eaf1;
+  --bad: #d64545;
 }
 
 
-
-/* =========================================================
-   ANSWER
-   ========================================================= */
-
-
-function answerQuestion(index) {
-
-  state.answers[state.index] =
-    index;
-
-  render();
-
-}
-
-
-
-/* =========================================================
-   NEXT
-   ========================================================= */
-
-
-function nextQuestion() {
-
-  if (
-    state.answers[state.index] ===
-    undefined
-  ) {
-
-    alert(
-      "Please select an answer."
-    );
-
-    return;
-
-  }
-
-
-  const quiz =
-    quizzes[state.type];
-
-
-  if (
-    state.index <
-    quiz.questions.length - 1
-  ) {
-
-    state.index++;
-
-    render();
-
-  }
-
-  else {
-
-    submitResults();
-
-  }
-
-}
-
-
-
-/* =========================================================
-   PREVIOUS
-   ========================================================= */
-
-
-function previousQuestion() {
-
-  if (state.index > 0) {
-
-    state.index--;
-
-    render();
-
-  }
-
-}
-
-
-
-/* =========================================================
-   SUBMIT RESULTS
-   ========================================================= */
-
-
-function submitResults() {
-
-  const quiz =
-    quizzes[state.type];
-
-
-  let score = 0;
-
-
-  quiz.questions.forEach(
-    (question, i) => {
-
-      if (
-        state.answers[i] ===
-        question.correct
-      ) {
-
-        score++;
-
-      }
-
-    }
-  );
-
-
-  state.finalScore =
-    score;
-
-
-  /*
-   * Prepare data for Apps Script.
-   */
-
-  const payload = {
-
-    name:
-      state.name,
-
-    quiz:
-      quiz.title,
-
-    answers:
-      state.answers,
-
-    score:
-      score,
-
-    googleCredential:
-      state.googleCredential,
-
-    googleSub:
-      state.googleSub
-
-  };
-
-
-  /*
-   * Create hidden iframe.
-   */
-
-  const iframe =
-    document.createElement(
-      "iframe"
-    );
-
-
-  iframe.name =
-    "googleSubmissionFrame";
-
-
-  iframe.style.display =
-    "none";
-
-
-  document.body.appendChild(
-    iframe
-  );
-
-
-  /*
-   * Create normal HTML POST form.
-   */
-
-  const form =
-    document.createElement(
-      "form"
-    );
-
-
-  form.method =
-    "POST";
-
-
-  form.action =
-    GOOGLE_SCRIPT_URL;
-
-
-  form.target =
-    "googleSubmissionFrame";
-
-
-  form.style.display =
-    "none";
-
-
-  /*
-   * Put JSON payload into form field.
-   */
-
-  const input =
-    document.createElement(
-      "input"
-    );
-
-
-  input.type =
-    "hidden";
-
-
-  input.name =
-    "payload";
-
-
-  input.value =
-    JSON.stringify(payload);
-
-
-  form.appendChild(
-    input
-  );
-
-
-  document.body.appendChild(
-    form
-  );
-
-
-  /*
-   * Send the form.
-   */
-
-  form.submit();
-
-
-  /*
-   * Give Apps Script time to receive it,
-   * then show completion page.
-   */
-
-  setTimeout(
-    () => {
-
-      state.screen =
-        "done";
-
-
-      render();
-
-
-      form.remove();
-
-
-      iframe.remove();
-
-    },
-    1500
-  );
-
-}
-
-
-
-/* =========================================================
-   DONE
-   ========================================================= */
-
-
-function renderDone() {
-
-  document
-    .getElementById("bar")
-    .style.width =
-      "100%";
-
-
-  const quiz =
-    quizzes[state.type];
-
-
-  document
-    .getElementById("main")
-    .innerHTML = `
-
-      <div class="screen result">
-
-        <div class="check">
-          ✓
-        </div>
-
-
-        <div class="eyebrow">
-          QUIZ COMPLETE
-        </div>
-
-
-        <h2>
-          Thank you,
-          ${escapeHtml(state.name)}!
-        </h2>
-
-
-        <div class="score">
-
-          ${state.finalScore}
-          /
-          ${quiz.questions.length}
-
-        </div>
-
-
-        <p>
-          Your response has been submitted.
-        </p>
-
-
-        <p class="small">
-
-          Signed in as
-          ${escapeHtml(state.email)}
-
-        </p>
-
-
-        <div class="actions">
-
-          <div></div>
-
-
-          <button
-            class="primary"
-            onclick="resetQuiz()"
-          >
-            Take Another Quiz
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-}
-
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-
-function resetQuiz() {
-
-  state = {
-
-    screen: "intro",
-
-    name: "",
-
-    email: "",
-
-    googleCredential: "",
-
-    googleSub: "",
-
-    type: null,
-
-    index: 0,
-
-    answers: [],
-
-    finalScore: 0
-
-  };
-
-
-  render();
-
-}
-
-
-
-/* =========================================================
-   HTML ESCAPING
-   ========================================================= */
-
-
-function escapeHtml(value) {
-
-  return String(value ?? "")
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
-}
-
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-
-render();
-
-</script>
-
-
-</body>
-
-</html>
+* {
+  box-sizing: border-box;
+"MD_Quiz_fixed_equations.html" 2070L, 29499B
