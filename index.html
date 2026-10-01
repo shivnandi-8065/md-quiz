@@ -959,10 +959,10 @@ const quizzes = {
 
       {
         q: `<strong>Which function is commonly used as the biasing potential in harmonic umbrella sampling?</strong><br><br>
-            A. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)<br>
-            B. \\(\displaystyle \\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)<br>
-            C. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)<br>
-            D. \\(\displaystyle \\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)`,
+            A. \\( \\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)<br>
+            B. \\( \\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)<br>
+            C. \\( \\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)<br>
+            D. \\( \\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)`,
       
         image: "",
       
@@ -1209,8 +1209,8 @@ function renderIntro() {
 
 
         <h1>
-          How well do you know
-          molecular dynamics?
+          Are you really an MD expert?
+          Let’s find out.
         </h1>
 
 
@@ -1228,7 +1228,7 @@ function renderIntro() {
         <input
           id="nameInput"
           type="text"
-          placeholder="e.g. Shiv"
+          placeholder="e.g. Shivnandi"
           value="${escapeHtml(state.name)}"
         >
 
@@ -1241,11 +1241,7 @@ function renderIntro() {
 
 
           <p class="small">
-
-            Your Google account is used to record
-            your verified email address with your
-            quiz response.
-
+            This is a Google Form. Please sign in with your Google account to continue.
           </p>
 
 
