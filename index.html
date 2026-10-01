@@ -785,10 +785,42 @@ const quizzes = {
         image: "",
 
         options: [
-          "To approximate bulk behavior",
-          "To remove all solvent",
-          "To increase temperature",
-          "To eliminate interactions"
+          "Larger Q → stronger/faster thermostat coupling; smaller Q → weaker/slower thermostat coupling",
+          "The thermostat-system coupling is independent of Q",
+          "Larger Q → weaker/slower thermostat coupling; smaller Q → stronger/faster thermostat coupling",
+          "Larger Q directly increases the temperature of the system"
+        ],
+
+        correct: 2
+      },
+
+
+      {
+        q: "Two molecules, A and B, are identical in all respects except that m_B > m_A. What is the expected effect of the larger mass on molecule B?",
+
+        image: "",
+
+        options: [
+          "Its potential energy becomes larger.",
+          "Its acceleration and characteristic vibrational frequencies generally decrease",
+          "Its equilibrium structure does not change",
+          "Its force becomes smaller"
+        ],
+
+        correct: 1
+      },
+
+
+      {
+        q: "In the Ewald summation method, the long-range electrostatic interaction is mathematically separated into which components?",
+
+        image: "",
+
+        options: [
+          "Real-space and reciprocal-space contributions, along with a self-interaction correction",
+          "Kinetic and potential energy contributions",
+          "Bonded and nonbonded contributions",
+          "Coulombic and Lennard-Jones contributions"
         ],
 
         correct: 0
@@ -796,67 +828,36 @@ const quizzes = {
 
 
       {
-        q: "What does PME primarily handle?",
+        q: "When choosing a simulation box for a protein/polymer in water under periodic boundary conditions, which considerations are important?",
 
         image: "",
 
         options: [
-          "Long-range electrostatics",
-          "Protein secondary structure",
-          "Trajectory compression",
-          "Temperature scaling"
+          "The solute should not interact with its own periodic image.",
+          "Local properties/correlations < box length/2",
+          "The simulation box can be equal to the cutoff of vdW forces",
+          "Both A and B"
+          "All of A, B, and C"
         ],
 
-        correct: 0
-      },
-
-
-      {
-        q: "What is the role of a thermostat?",
-
-        image: "",
-
-        options: [
-          "Control or maintain temperature",
-          "Calculate RDF directly",
-          "Build a topology",
-          "Remove periodicity"
-        ],
-
-        correct: 0
-      },
-
-
-      {
-        q: "What can an RDF, g(r), describe?",
-
-        image: "",
-
-        options: [
-          "Spatial distribution of particles around a reference",
-          "Protein sequence identity",
-          "Simulation wall time",
-          "GPU memory usage"
-        ],
-
-        correct: 0
+        correct: 3
       },
 
 
       {
         q:
-          "Why are equilibration and production runs separated?",
+          "In GROMACS, what does lincs_order = 4 represent?",
 
         image: "",
 
         options: [
-          "To allow the system to relax before collecting production data",
-          "To change the force field automatically",
-          "To remove all water",
-          "To increase atom count"
+          "LINCS performs four iterations to correct the bond constraints",
+          "LINCS uses a fourth-order expansion to calculate the constraint correction",
+          "Four bonds are constrained in each molecule",
+          "The timestep is divided into four integration steps "
         ],
 
-        correct: 0
+        correct: 1
       }
 
     ]
@@ -878,15 +879,15 @@ const quizzes = {
 
       {
         q:
-          "What is the main motivation for enhanced sampling?",
+          "What is the main purpose of having sufficient overlap between neighboring umbrella sampling windows?",
 
         image: "",
 
         options: [
-          "Improve exploration of rare or slow events",
-          "Reduce the number of atoms",
-          "Remove all thermal motion",
-          "Avoid defining a force field"
+          "To provide continuous sampling of the reaction coordinate and allow WHAM to reliably combine information from adjacent windows",
+          "To make the biasing potential identical in all windows",
+          "To minimize the force constant in every window",
+          "To ensure that the PMF is zero in every window "
         ],
 
         correct: 0
@@ -895,67 +896,76 @@ const quizzes = {
 
       {
         q:
-          "What does umbrella sampling typically use?",
+          "What does WHAM stand for?",
 
         image: "",
 
         options: [
-          "A biasing potential across overlapping windows",
-          "Only a vacuum simulation",
-          "A single minimization",
-          "Random atom deletion"
+          "Weighted Hamiltonian Analysis Method",
+          "Windowed Histogram Analysis Method",
+          "Weighted Histogram Analysis Method",
+          "Weighted Hybrid Analysis Method "
         ],
 
-        correct: 0
+        correct: 2
       },
 
 
       {
-        q: "What is WHAM used for?",
+        q: `<strong>Meaning of \\(F_i\\)</strong><br><br>
+            For an umbrella window, the free-energy profile can be written as
+            \\[
+            G_i(\\xi) = -\\frac{1}{\\beta}\\ln P_i^b(\\xi) - \\omega_i(\\xi) + F_i
+            \\]
+            <br>
+            <strong>What does \\(F_i\\) represent?</strong>`,
+      
+        image: "",
+      
+        options: [
+          "The force constant of umbrella window i",
+          "The external force acting on the system",
+          "The total free energy of the system"
+          "The free-energy offset associated with umbrella window i"
+        ],
+      
+        correct: 3
+      },
+
+      {
+        q: What is the primary purpose of the Weighted Histogram Analysis Method (WHAM) in umbrella sampling?",
 
         image: "",
 
         options: [
-          "Combining biased histograms to estimate an unbiased distribution",
-          "Generating protein sequences",
-          "Assigning atom names",
-          "Visualizing molecules only"
+          "Minimizes the free-energy offsets of each umbrella window",
+          "Removes the reaction coordinate from the simulation",
+          "Generates independent umbrella windows automatically",
+          "Iteratively determines the free-energy offsets and unbiased probability distribution to reconstruct the PMF"
         ],
 
-        correct: 0
+        correct: 3
       },
 
 
       {
-        q: "What does a PMF represent?",
-
+        q: `<strong>Which function is commonly used as the biasing potential in harmonic umbrella sampling?</strong><br><br>
+            A. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)<br>
+            B. \\(\displaystyle \\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)<br>
+            C. \\(\displaystyle \\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)<br>
+            D. \\(\displaystyle \\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)`,
+      
         image: "",
-
+      
         options: [
-          "Free energy as a function of a coordinate",
-          "Total number of water molecules",
-          "Protein mass",
-          "Simulation temperature only"
+          "\\(\\omega_i(\\xi)=\\frac{1}{2}k_i(\\xi-\\xi_i)^2\\)",
+          "\\(\\omega_i(\\xi)=k_i(\\xi-\\xi_i)\\)",
+          "\\(\\omega_i(\\xi)=\\frac{1}{2}k_i\\xi^2\\)",
+          "\\(\\omega_i(\\xi)=\\frac{k_i}{\\xi-\\xi_i}\\)"
         ],
-
+      
         correct: 0
       },
-
-
-      {
-        q: "What is a collective variable (CV)?",
-
-        image: "",
-
-        options: [
-          "A reduced coordinate describing a process of interest",
-          "A force-field atom type",
-          "A GPU setting",
-          "A trajectory file format"
-        ],
-
-        correct: 0
-      }
 
     ]
 
