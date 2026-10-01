@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  }
+};
+</script>
 
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <head>
 
 <meta charset="UTF-8">
@@ -1521,9 +1530,8 @@ function renderQuiz() {
           ${total}
         </h2>
 
-
         <p>
-          ${escapeHtml(question.q)}
+          ${question.q}
         </p>
 
 
@@ -1570,7 +1578,7 @@ function renderQuiz() {
                     <div class="radio"></div>
 
                     <div>
-                      ${escapeHtml(option)}
+                      ${option}
                     </div>
 
                   </div>
