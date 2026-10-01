@@ -19,7 +19,78 @@
   async
   defer
 ></script>
+.creator-card {
+  margin: 30px auto 10px;
+  padding: 22px;
+  max-width: 620px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  background: #fafaff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
 
+.creator-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex: none;
+}
+
+.creator-info {
+  flex: 1;
+}
+
+.creator-name {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.creator-role {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.creator-research {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.creator-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.creator-links a {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.creator-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .creator-card {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .creator-links {
+    justify-content: center;
+  }
+}
 
 <style>
 
@@ -1894,18 +1965,14 @@ function submitResults() {
    DONE
    ========================================================= */
 
-
 function renderDone() {
 
   document
     .getElementById("bar")
-    .style.width =
-      "100%";
-
+    .style.width = "100%";
 
   const quiz =
     quizzes[state.type];
-
 
   document
     .getElementById("main")
@@ -1917,44 +1984,89 @@ function renderDone() {
           ✓
         </div>
 
-
         <div class="eyebrow">
           QUIZ COMPLETE
         </div>
-
 
         <h2>
           Thank you,
           ${escapeHtml(state.name)}!
         </h2>
 
-
         <div class="score">
-
           ${state.finalScore}
           /
           ${quiz.questions.length}
-
         </div>
-
 
         <p>
           Your response has been submitted.
         </p>
 
-
         <p class="small">
-
-          Signed in as
-          ${escapeHtml(state.email)}
-
+          Your results will be sent to your email,
+          along with the correct answers and explanations.
         </p>
 
+        <div class="creator-card">
+
+          <img
+            class="creator-photo"
+            src="IMG_AB9373773505-1.jpeg"
+            alt="Shivnandi"
+          >
+
+          <div class="creator-info">
+
+            <div class="creator-name">
+              This MD quiz was created by Shivnandi
+            </div>
+
+            <div class="creator-role">
+              PhD Research Scholar, IIT Delhi
+            </div>
+
+            <div class="creator-research">
+              Computational Molecular Dynamics
+              • Biomolecular Simulations
+              • Molecular Crowding
+            </div>
+
+            <div class="creator-links">
+
+              <a
+                href="https://sites.google.com/view/shivnandi/about"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Research Profile
+              </a>
+
+              <a
+                href="https://scholar.google.com/citations?user=DjN1zYYAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Scholar
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/shivnandi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
 
         <div class="actions">
 
           <div></div>
-
 
           <button
             class="primary"
