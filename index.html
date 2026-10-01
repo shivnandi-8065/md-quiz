@@ -683,15 +683,15 @@ const quizzes = {
     questions: [
 
       {
-        q: "What is the main purpose of an MD simulation?",
+        q: "Why is a timestep of 1–2 fs commonly used in atomistic MD simulations?",
 
         image: "",
 
         options: [
-          "Solve Newton's equations for atoms over time",
-          "Determine experimental crystal structures",
-          "Measure pH directly",
-          "Generate DNA sequences"
+          "To accurately resolve the fastest atomic motions",
+          "Because proteins fold in a time steps of every 1–2 fs",
+          "To keep the temperature constant",
+          "Because the simulation box changes every 1–2 fs "
         ],
 
         correct: 0
@@ -699,15 +699,15 @@ const quizzes = {
 
 
       {
-        q: "Which ensemble keeps temperature constant?",
+        q: "How does the choice of NVT or NPT ensemble affect the calculation of free energy in molecular dynamics?",
 
         image: "",
 
         options: [
-          "NVE",
-          "NVT",
-          "NVE + vacuum",
-          "None of these"
+          "The ensemble has no effect on free energy calculations",
+          "The appropriate free-energy definition depends on the thermodynamic ensemble and its controlled variables",
+          "NPT simulations always give lower free energies than NVT simulations",
+          "NVT simulations cannot be used for free-energy calculations "
         ],
 
         correct: 1
@@ -715,48 +715,48 @@ const quizzes = {
 
 
       {
-        q: "What does a force field provide?",
+        q: "Which fundamental equation governs the motion of atoms in classical molecular dynamics?",
 
         image: "",
 
         options: [
-          "Potential-energy functions and parameters",
-          "Experimental images",
-          "Only atomic coordinates",
-          "Only solvent molecules"
+          "Schrödinger equation",
+          "Newton's second law",
+          "Boltzmann equation",
+          "Navier–Stokes equation "
         ],
 
-        correct: 0
+        correct: 1
       },
 
 
       {
         q:
-          "What is the typical MD timestep for an all-atom biomolecular simulation?",
+          "Which quantity does not change as a result of the time integration of an individual particle's motion?",
 
         image: "",
 
         options: [
-          "1–2 fs",
-          "1–2 ns",
-          "1–2 μs",
-          "1–2 s"
+          "Position",
+          "Velocity",
+          "Acceleration",
+          "Mass "
         ],
 
-        correct: 0
+        correct: 3
       },
 
 
       {
-        q: "What does RMSD commonly measure?",
+        q: "Why is NVT equilibration commonly performed before NPT equilibration?",
 
         image: "",
 
         options: [
-          "Structural deviation from a reference",
-          "Solvent viscosity",
-          "Temperature drift",
-          "Number of atoms"
+          "To first stabilize the system's temperature before allowing the volume/density to adjust",
+          "To increase the number of particles ",
+          "To remove all kinetic energy from the system",
+          "To eliminate the need for pressure coupling "
         ],
 
         correct: 0
